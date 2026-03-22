@@ -29,10 +29,12 @@ Steam achievements work normally in both cases.
 
 ## 1. Edit config.py
 
-Open `config.py` and at minimum set `LAN_IP` to the LAN IP of the machine running the proxy:
+Open `config.py` and at minimum set `LAN_IP` to the LAN IP of the machine running the proxy.
+If the proxy and the game run on the same device (e.g. Steam Deck standalone with the systemd service),
+you may use `127.0.0.1` instead.
 
 ```python
-LAN_IP = "192.168.1.10"   # your actual LAN IP — never use 127.0.0.1
+LAN_IP = "192.168.1.10"   # LAN IP of the machine running the proxy
 WINE_PROTON_VER = "Proton 10.0"  # adjust if you use a different Proton version
 ```
 

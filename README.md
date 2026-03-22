@@ -12,6 +12,14 @@ This project was created in the spirit of game preservation — to restore the e
 
 ---
 
+## Legal notice
+
+This project is a **non-commercial, fan-made preservation effort** created solely to restore
+functionality that WB Games chose to discontinue when it shut down the online servers for
+Mad Max (2015). It does not distribute any game files, assets, or copyrighted content.
+It interacts only with a copy of the game already legitimately owned by the user.
+
+---
 ## How it works
 
 The emulator runs on a PC on your local network and does three things:

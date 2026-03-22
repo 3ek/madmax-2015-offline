@@ -88,12 +88,15 @@ HTTP_PORT = 8888  # provisioning server port (plain HTTP)
 #
 # Set this to the IP address of the machine running the proxy.
 #
-# If the proxy and the game run on the SAME machine (Steam Deck standalone,
-# Windows single-PC): use your LAN IP (e.g. "192.168.1.10").
-# Do NOT use 127.0.0.1 — DNS queries redirected to loopback cannot be
-# reached by the game process through the normal network stack.
+# For all supported configurations (Steam Deck standalone, Windows single-PC,
+# Windows + Steam Deck, Linux + Steam Deck) this should be the LAN IP of the
+# machine running the proxy — e.g. "192.168.1.10".
 #
-# If the proxy runs on a SEPARATE PC and the game is on Steam Deck:
+# To find your LAN IP:
+#   Windows     : ipconfig
+#   Linux/Deck  : ip -4 addr | grep inet
+# ---------------------------------------------------------------------------
+LAN_IP = "0.0.0.0"  # <-- replace with your actual LAN IP, e.g. "192.168.1.10"
 # use the LAN IP of the proxy PC.
 #
 # To find your LAN IP:
