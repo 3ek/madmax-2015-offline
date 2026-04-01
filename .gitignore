@@ -26,4 +26,5 @@ Thumbs.db
 
 #Other
 logs/
+data/
 last.console.log
