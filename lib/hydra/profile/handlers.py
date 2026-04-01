@@ -33,6 +33,8 @@ from .fields import (
     normalize_requested_fields,
     profile_value_for_field,
 )
+from .time import current_game_time
+
 
 _READER = HydraReader()
 _WRITER = HydraWriter()
@@ -189,7 +191,9 @@ def handle_profile_update(inner: bytes) -> bytes:
     for k, v in updates.items():
         if k in ("guid", "platform_account_id"):
             continue
-        if isinstance(v, str):
+        if k == "timestamp_scrap_rewarded":
+            safe_updates[k] = str(current_game_time())
+        elif isinstance(v, str):
             safe_updates[k] = v
         elif hasattr(v, "timestamp"):
             safe_updates[k] = int(v.timestamp())

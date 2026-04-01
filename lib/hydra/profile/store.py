@@ -21,6 +21,7 @@ import json
 from pathlib import Path
 
 from ..codec import HydraReader
+from .time import current_game_time
 
 PROFILES_FILE = Path(__file__).resolve().parents[3] / "data" / "profiles.json"
 profiles: dict[str, dict] = {}
@@ -50,6 +51,7 @@ def upsert_profile(platform_id: str, fields: dict | None = None) -> dict:
             profile[str(key)] = value
     if platform_id and "platform_account_id" not in profile:
         profile["platform_account_id"] = platform_id
+    profile["updated_at"] = current_game_time()
     save_profiles()
     return profile
 
